@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:Wasserzaehler.ViewModels"
+             xmlns:resource="clr-namespace:Wasserzaehler" 
+             
+             x:DataType="viewmodels:MainViewModel"
+             x:Class="Wasserzaehler.MainPage">
+
+
+
+
+    <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="*,*"     
+         >
+        <!--Row=0 Column=0-->
+        <Image Source="glass.png" 
+               WidthRequest="400" 
+               HeightRequest ="400"></Image>
+        <Label 
+            Text="{Binding Counter}"
+            
+
+               FontSize="200"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"
+               Grid.Column="1" />
+
+        <Button 
+            Text="{x:Static resource:AppResources.AddButton}"
+            
+                Grid.Row="1" Grid.ColumnSpan="2"
+                Padding="5"
+                Command="{Binding IncCommand}"></Button>
+    </Grid>
+
+</ContentPage>
